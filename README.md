@@ -235,3 +235,19 @@ Descreva aqui o conteúdo desta seção.
 ## 📄 Licença
 
 Descreva aqui o conteúdo desta seção.
+
+
+## 📊 Workflow
+
+```mermaid
+graph TD
+    A[Iniciar Aplicação] --> B(Carregar Dados)
+    B --> C{Analisar Dados?}
+    C -- Sim --> D[Processar Dados]
+    C -- Não --> E[Gerar Relatório Básico]
+    D --> F[Visualizar Resultados]
+    F --> G[Exportar Dados]
+    E --> G
+    G --> H[Fim]
+```
+
