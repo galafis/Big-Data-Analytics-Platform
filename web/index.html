@@ -11,13 +11,23 @@
         <div class="container">
             <h1>Big-Data-Analytics-Platform</h1>
             <p>Advanced solution by Gabriel Demetrios Lafis</p>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#upload">Upload Data</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
     <main class="main">
         <div class="container">
-            <section class="hero">
-                <div class="hero-image" style="background-image: url('assets/images/hero_image.png');"></div>
+            <section class="hero" id="home">
+                <div class="hero-image" style="background-image: url(\'assets/images/hero_image.png\');"></div>
+                <h2>Welcome to the Platform</h2>
+                <p>This is an advanced platform for big data analytics.</p>
                 <h2>Modern Technology Stack</h2>
                 <div class="tech-grid">
                     <div class="tech-card">
@@ -56,6 +66,25 @@
                     </div>
                 </div>
             </section>
+
+            <section id="dashboard">
+                <h2>Interactive Dashboard</h2>
+                <p>Real-time data visualization will be displayed here.</p>
+                <div id="data-display"></div>
+            </section>
+            <section id="upload">
+                <h2>Upload Your Data</h2>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="file" id="data-file" name="file">
+                    <button type="submit">Upload</button>
+                </form>
+                <p id="upload-status"></p>
+            </section>
+            <section id="analytics">
+                <h2>Run Analytics</h2>
+                <button id="run-analytics">Get Analytics Results</button>
+                <pre id="analytics-results"></pre>
+            </section>
         </div>
     </main>
     
@@ -73,3 +102,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+

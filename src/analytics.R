@@ -57,5 +57,27 @@ DataAnalyzer <- setRefClass("DataAnalyzer",
 # Example usage
 cat("R Analytics Module Loaded\n")
 cat("Usage: analyzer <- DataAnalyzer$new()\n")
-cat("       analyzer$load_data('data.csv')\n")
+cat("       analyzer$load_data(\'data.csv\')\n")
 cat("       analyzer$analyze()\n")
+
+# Example of direct execution for Python subprocess
+if (interactive() == FALSE) {
+  # This block runs when the script is executed via Rscript
+  cat("\n--- R Analytics Script Output ---\n")
+  
+  # Create dummy data for demonstration
+  dummy_data <- data.frame(
+    ID = 1:5,
+    Feature1 = rnorm(5),
+    Feature2 = runif(5, 0, 10)
+  )
+  
+  # Create an analyzer instance and run a simplified analysis
+  analyzer <- DataAnalyzer$new()
+  analyzer$data <- dummy_data # Assign dummy data directly
+  analyzer$analyze()
+  analyzer$generate_report()
+  
+  cat("--- End R Analytics Script Output ---\n")
+}
+
