@@ -68,7 +68,9 @@ python src/app.py
    ```
 
 2. **Acessar Interface Web**
-   - Abrir `web/index.html` no navegador para a interface frontend, ou visite a demonstração ao vivo no [GitHub Pages](https://galafis.github.io/Big-Data-Analytics-Platform/)
+   - Abrir `web/index.html` no navegador para a interface frontend, ou visite a demonstração ao vivo no [GitHub Pages](https://galafis.github.io/Big-Data-Analytics-Platform/).
+
+**Nota sobre GitHub Pages:** Para ativar a demonstração ao vivo, por favor, configure o GitHub Pages nas configurações do seu repositório para servir do diretório `/web` na branch `main`.
    - Dashboard interativo com funcionalidade em tempo real
    - Design responsivo funciona em desktop e dispositivos móveis
 
