@@ -71,7 +71,7 @@ python app.py
    ```
 
 2. **Access Web Interface**
-   - Open `index.html` in your browser for the frontend interface
+   - Open `index.html` in your browser for the frontend interface, or visit the live demo on [GitHub Pages](https://galafis.github.io/Big-Data-Analytics-Platform/)
    - Interactive dashboard with real-time functionality
    - Responsive design works on desktop and mobile devices
 
@@ -197,7 +197,7 @@ python app.py
    ```
 
 2. **Acessar Interface Web**
-   - Abrir `index.html` no navegador para a interface frontend
+   - Abrir `index.html` no navegador para a interface frontend, ou visite a demonstração ao vivo no [GitHub Pages](https://galafis.github.io/Big-Data-Analytics-Platform/)
    - Dashboard interativo com funcionalidade em tempo real
    - Design responsivo funciona em desktop e dispositivos móveis
 

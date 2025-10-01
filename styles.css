@@ -157,3 +157,13 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.hero-image {
+    width: 100%;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
