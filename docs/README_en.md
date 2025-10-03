@@ -1,3 +1,4 @@
+```markdown
 # Big-Data-Analytics-Platform
 
 ## English
@@ -13,10 +14,10 @@
 ![JavaScript version](https://img.shields.io/badge/javascript-ES6%2B-yellow?style=flat-square&logo=javascript)
 
 ### 🖼️ Hero Image
-![Hero Image](https://via.placeholder.com/1200x400?text=Big+Data+Analytics+Platform+Hero+Image)
+![Hero Image](hero_image.png)
 
 ### Overview
-Advanced Big-Data-Analytics-Platform with comprehensive functionality and modern technology stack. Features multiple programming languages, interactive web interfaces, and advanced analytics capabilities for professional-grade solutions.
+This advanced Big Data Analytics Platform is designed to offer comprehensive functionality and a modern technology stack. It integrates multiple programming languages, interactive web interfaces, and advanced analytics capabilities, providing professional-grade solutions for processing and visualizing large volumes of data.
 
 ### Author
 **Gabriel Demetrios Lafis**
@@ -25,9 +26,9 @@ Advanced Big-Data-Analytics-Platform with comprehensive functionality and modern
 - GitHub: [galafis](https://github.com/galafis)
 
 ### Technologies Used
-- **Backend**: Python, Flask, FastAPI, SQLite
+- **Backend**: Python (Flask, FastAPI), SQLite
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Analytics**: R, ggplot2, dplyr, statistical modeling
+- **Analytics**: R (ggplot2, dplyr, corrplot, plotly), statistical modeling
 - **Styling**: CSS Grid, Flexbox, animations, responsive design
 - **Modern Features**: Async/await, Web APIs, ES6 classes
 - **Data Processing**: pandas, numpy, scikit-learn
@@ -36,42 +37,44 @@ Advanced Big-Data-Analytics-Platform with comprehensive functionality and modern
 ### Features
 
 #### Core Functionality
-- **Advanced Processing**: High-performance algorithms and data processing
-- **Real-time Analytics**: Live data analysis and visualization
-- **Interactive Interface**: Modern web interface with responsive design
-- **Statistical Analysis**: Comprehensive R-based analytics and reporting
-- **Scalable Architecture**: Built for enterprise-level performance
+- **Advanced Processing**: High-performance algorithms for efficient data processing.
+- **Real-time Analytics**: Live data analysis and visualization capabilities.
+- **Interactive Interface**: Modern and responsive web interface for a fluid user experience.
+- **Statistical Analysis**: Comprehensive R-based analytics and detailed report generation.
+- **Scalable Architecture**: Designed for enterprise-level performance and scalability.
 
 #### Web Interface
-- **Modern UI**: HTML5 semantic markup with accessibility features
-- **Responsive Design**: CSS3 with Grid, Flexbox, and mobile optimization
-- **Interactive Elements**: JavaScript ES6+ with modern web APIs
-- **Real-time Updates**: Dynamic content and live data visualization
-- **Professional Styling**: Custom CSS animations and transitions
+- **Modern UI**: HTML5 semantic markup with accessibility features.
+- **Responsive Design**: CSS3 with Grid, Flexbox, and mobile optimization.
+- **Interactive Elements**: JavaScript ES6+ with modern web APIs for interactivity.
+- **Real-time Updates**: Dynamic content and live data visualization.
+- **Professional Styling**: Custom CSS animations and transitions.
 
 #### Analytics & Reporting
-- **R Integration**: Advanced statistical analysis and data visualization
-- **Data Processing**: Automated data cleaning and transformation
-- **Visualization**: Interactive charts and comprehensive dashboards
-- **Performance Metrics**: Real-time monitoring and analytics
-- **Export Options**: Multiple format support for reports and data
+- **R Integration**: Advanced statistical analysis and data visualization.
+- **Data Processing**: Automated data cleaning and transformation.
+- **Visualization**: Interactive charts and comprehensive dashboards.
+- **Performance Metrics**: Real-time monitoring and analytics.
+- **Export Options**: Multiple format support for reports and data.
 
 ### Installation
 
+To set up and run the platform, follow the steps below:
+
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
 cd Big-Data-Analytics-Platform
 
-# Python setup
+# 2. Python setup
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r config/requirements.txt
 
-# R setup (install required packages)
-Rscript -e "install.packages(c(\'ggplot2\', \'dplyr\', \'corrplot\', \'plotly\'))"
+# 3. R setup (install required packages)
+Rscript -e "install.packages(c(\'ggplot2\', \'dplyr\', \'corrplot\', \'plotly\'), repos=\'http://cran.us.r-project.org\')"
 
-# Run the application
+# 4. Run the application
 python src/app.py
 ```
 
@@ -87,8 +90,6 @@ python src/app.py
    - Open `web/index.html` in your browser for the frontend interface, or visit the live demo on [GitHub Pages](https://galafis.github.io/Big-Data-Analytics-Platform/).
 
 **Note on GitHub Pages:** To enable the live demo, please configure GitHub Pages in your repository settings to serve from the `/web` directory on the `main` branch.
-   - Interactive dashboard with real-time functionality
-   - Responsive design works on desktop and mobile devices
 
 3. **Run Analytics**
    ```r
@@ -109,7 +110,7 @@ python src/app.py
 ```
 Big-Data-Analytics-Platform/
 ├── config/             # Configuration files (e.g., requirements.txt)
-├── data/               # Data files and samples
+├── data/               # Data files and samples (e.g., data.csv)
 ├── docs/               # Documentation files (e.g., README_en.md, README_pt.md)
 ├── scripts/            # Utility scripts
 ├── src/                # Source code (e.g., app.py, app.js, analytics.R)
@@ -130,6 +131,8 @@ GET  /api/status       # System status
 
 ### Configuration
 
+The `config/config.py` file contains the application settings:
+
 ```python
 # config.py
 APP_CONFIG = {
@@ -147,21 +150,20 @@ ANALYTICS_CONFIG = {
 ```
 
 ### Performance Features
-- **Multi-threading**: Parallel processing for improved performance
-- **Caching**: Intelligent caching for faster response times
-- **Memory Optimization**: Efficient memory usage and management
-- **Scalability**: Horizontal scaling support for enterprise use
+- **Multi-threading**: Parallel processing for improved performance.
+- **Caching**: Intelligent caching for faster response times.
+- **Memory Optimization**: Efficient memory usage and management.
+- **Scalability**: Horizontal scaling support for enterprise use.
 
 ### Architecture Diagram
 ![Architecture Diagram](architecture_diagram.png)
 
-
 ### License
-MIT License
+This project is licensed under the [MIT License](LICENSE).
 
 ### Contributions
-Contributions are welcome! Please open an issue or submit a pull request.
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ### Contact
 For questions or support, please contact via the email or LinkedIn mentioned above.
-
+```
