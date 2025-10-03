@@ -7,3 +7,9 @@ This repository contains an advanced Big Data Analytics Platform. Please select 
 *   [Português](docs/README_pt.md)
 *   [English](docs/README_en.md)
 
+### 🖼️ Imagem Hero
+![Imagem Hero](hero_image.png)
+
+### Diagrama de Arquitetura
+![Diagrama de Arquitetura](architecture_diagram.png)
+

@@ -12,6 +12,8 @@
 ![Versão R](https://img.shields.io/badge/R-4.0%2B-blue?style=flat-square&logo=r)
 ![Versão JavaScript](https://img.shields.io/badge/javascript-ES6%2B-yellow?style=flat-square&logo=javascript)
 
+### 🖼️ Imagem Hero
+![Imagem Hero](hero_image.png)
 
 ### Visão Geral
 Big-Data-Analytics-Platform avançado com funcionalidade abrangente e stack de tecnologia moderna. Apresenta múltiplas linguagens de programação, interfaces web interativas e capacidades de análise avançadas para soluções de nível profissional.
@@ -92,3 +94,4 @@ Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull requ
 
 ### Contato
 Para dúvidas ou suporte, entre em contato através do email ou LinkedIn mencionados acima.
+
