@@ -13,7 +13,7 @@
 ![JavaScript version](https://img.shields.io/badge/javascript-ES6%2B-yellow?style=flat-square&logo=javascript)
 
 ### 🖼️ Hero Image
-![Hero Image](hero_image.png)
+![Hero Image](https://via.placeholder.com/1200x400?text=Big+Data+Analytics+Platform+Hero+Image)
 
 ### Overview
 Advanced Big-Data-Analytics-Platform with comprehensive functionality and modern technology stack. Features multiple programming languages, interactive web interfaces, and advanced analytics capabilities for professional-grade solutions.
