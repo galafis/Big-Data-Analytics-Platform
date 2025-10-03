@@ -1,6 +1,13 @@
 # Big Data Analytics Platform
 
-![Big Data Analytics Platform Hero Image](https://via.placeholder.com/1200x400.png?text=Big+Data+Analytics+Platform)
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-orange.svg)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-blue.svg)](https://numpy.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![Big Data Analytics Platform Hero Image](https://via.placeholder.com/1200x400.png?text=Big+Data+Analytics+Platform+-+Professional+Hero+Image+Placeholder)
+
+\n*Nota: Uma imagem hero profissional será adicionada em breve para aprimorar a apresentação visual do projeto.*
 
 ## 🇧🇷 Português
 
@@ -174,7 +181,7 @@ To set up and run this project locally, follow the steps below:
 
     This script will generate dummy data, perform a sales analysis by category, and save the results to `data/sales_summary.csv`.
 
-5.  **Run tests (optional):**
+5.  **Run tests (optional):
 
     ```bash
     python3 src/test_data_processor.py
@@ -195,3 +202,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 ### Author
 
 Made with ❤️ by Gabriel Demetrios Lafis.
+

@@ -33,7 +33,7 @@ def main():
     print(sales_summary)
 
     # Salvar o resumo em um arquivo CSV para demonstração
-    output_path = 'Big-Data-Analytics-Platform/data/sales_summary.csv'
+    output_path = 'data/sales_summary.csv'
     sales_summary.to_csv(output_path, index=False)
     print(f"\nResumo de vendas salvo em: {output_path}")
 

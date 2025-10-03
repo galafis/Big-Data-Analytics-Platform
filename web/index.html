@@ -12,7 +12,7 @@
     </header>
     <main>
         <h2>Sales Summary by Category</h2>
-        <table>
+        <table id="sales-summary-table">
             <thead>
                 <tr>
                     <th>Category</th>
@@ -22,30 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Books</td>
-                    <td>35543.39</td>
-                    <td>1225.63</td>
-                    <td>29</td>
-                </tr>
-                <tr>
-                    <td>Clothing</td>
-                    <td>32032.74</td>
-                    <td>1525.37</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <td>Eletronics</td>
-                    <td>40168.57</td>
-                    <td>1487.72</td>
-                    <td>27</td>
-                </tr>
-                <tr>
-                    <td>Food</td>
-                    <td>37850.03</td>
-                    <td>1645.65</td>
-                    <td>23</td>
-                </tr>
+                <!-- Data will be loaded here by JavaScript -->
             </tbody>
         </table>
         <p>&copy; 2023 Big Data Analytics Platform</p>
@@ -53,5 +30,32 @@
     <footer>
         <p>Data analysis powered by Python and Pandas.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../data/sales_summary.csv')
+                .then(response => response.text())
+                .then(csvText => {
+                    const rows = csvText.split('\n').filter(row => row.trim() !== '');
+                    const tableBody = document.querySelector('#sales-summary-table tbody');
+
+                    // Skip header row for data parsing
+                    for (let i = 1; i < rows.length; i++) {
+                        const cols = rows[i].split(',');
+                        if (cols.length === 4) { // Ensure correct number of columns
+                            const tr = document.createElement('tr');
+                            cols.forEach(col => {
+                                const td = document.createElement('td');
+                                td.textContent = parseFloat(col).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || col; // Format numbers
+                                tr.appendChild(td);
+                            });
+                            tableBody.appendChild(tr);
+                        }
+                    }
+                })
+                .catch(error => console.error('Error loading the CSV file:', error));
+        });
+    </script>
 </body>
 </html>
+
