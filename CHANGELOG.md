@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-10-11
+
+### Added
+- Comprehensive troubleshooting guide (`TROUBLESHOOTING.md`)
+  - Git branch error documentation and solutions
+  - Dynamic branch detection examples
+  - Common issues and solutions
+- Quick reference guide (`QUICK_REFERENCE.md`)
+  - Fast lookup for Git branch error solutions
+  - Helper script command reference
+  - Branch structure overview
+- Branch helper utility script (`scripts/branch-helper.sh`)
+  - Automatic default branch detection
+  - Branch existence checking
+  - Branch comparison functionality
+  - Repository information display
+- Enhanced README.md with Git branch troubleshooting
+  - Added `refs/heads/master` error solution in both languages
+  - Updated project structure to include new files
+  - References to comprehensive troubleshooting guide and quick reference
+- Updated CONTRIBUTING.md with branch structure guidelines
+  - Documented use of `main` as default branch
+  - Added workflow for creating branches
+  - Reference to troubleshooting guide
+
+### Fixed
+- Addressed Git error: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
+- Provided multiple solutions for branch reference issues
+
 ## [2.0.0] - 2025-10-11
 
 ### Added

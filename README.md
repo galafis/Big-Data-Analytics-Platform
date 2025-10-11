@@ -100,6 +100,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions para testes automatizados
 ├── data/                    # Armazena dados processados e resultados de análises
 │   └── sales_summary.csv    # Exemplo de resultado de análise (gerado)
+├── scripts/                 # Scripts auxiliares
+│   └── branch-helper.sh     # Script auxiliar para detecção de branch
 ├── src/                     # Código fonte principal
 │   ├── data_processor.py    # Script para geração e análise de dados
 │   └── test_data_processor.py # Testes unitários para o processador de dados
@@ -112,7 +114,9 @@ Big-Data-Analytics-Platform/
 ├── CODE_OF_CONDUCT.md       # Código de Conduta
 ├── CONTRIBUTING.md          # Diretrizes para Contribuição
 ├── LICENSE                  # Licença do Projeto
+├── QUICK_REFERENCE.md       # Referência rápida para problemas com branches Git
 ├── README.md                # Este arquivo (documentação do projeto)
+├── TROUBLESHOOTING.md       # Guia completo de solução de problemas
 └── requirements.txt         # Dependências do Python
 ```
 
@@ -207,6 +211,23 @@ python3 src/test_data_processor.py
 - ✅ Integridade dos resultados
 
 ### Solução de Problemas
+
+> 📚 Para um guia completo de solução de problemas, consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
+> ⚡ Para referência rápida sobre o erro de branch Git, consulte [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+
+#### Erro: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
+
+**Causa:** Este repositório usa `main` como branch padrão, não `master`. Workflows ou scripts que referenciam `master` falharão.
+
+**Solução:** Use detecção dinâmica de branch ou atualize referências para `main`:
+```bash
+# Detectar branch padrão dinamicamente
+DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+git diff origin/$DEFAULT_BRANCH HEAD
+
+# Ou use o helper script
+./scripts/branch-helper.sh get-default
+```
 
 #### Erro: "ModuleNotFoundError: No module named 'pandas'"
 
@@ -360,6 +381,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions for automated testing
 ├── data/                    # Stores processed data and analysis results
 │   └── sales_summary.csv    # Example of analysis result (generated)
+├── scripts/                 # Helper scripts
+│   └── branch-helper.sh     # Branch detection helper script
 ├── src/                     # Main source code
 │   ├── data_processor.py    # Script for data generation and analysis
 │   └── test_data_processor.py # Unit tests for the data processor
@@ -372,7 +395,9 @@ Big-Data-Analytics-Platform/
 ├── CODE_OF_CONDUCT.md       # Code of Conduct
 ├── CONTRIBUTING.md          # Contribution Guidelines
 ├── LICENSE                  # Project License
+├── QUICK_REFERENCE.md       # Quick reference for Git branch issues
 ├── README.md                # This file (project documentation)
+├── TROUBLESHOOTING.md       # Complete troubleshooting guide
 └── requirements.txt         # Python dependencies
 ```
 
@@ -467,6 +492,23 @@ python3 src/test_data_processor.py
 - ✅ Results integrity
 
 ### Troubleshooting
+
+> 📚 For a complete troubleshooting guide, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
+> ⚡ For quick reference on Git branch error, see [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+
+#### Error: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
+
+**Cause:** This repository uses `main` as the default branch, not `master`. Workflows or scripts that reference `master` will fail.
+
+**Solution:** Use dynamic branch detection or update references to `main`:
+```bash
+# Detect default branch dynamically
+DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+git diff origin/$DEFAULT_BRANCH HEAD
+
+# Or use the helper script
+./scripts/branch-helper.sh get-default
+```
 
 #### Error: "ModuleNotFoundError: No module named 'pandas'"
 

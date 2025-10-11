@@ -19,6 +19,25 @@ Bem-vindo ao projeto Big Data Analytics Platform! Agradecemos seu interesse em c
 
 ### 3. Contribuir com Código
 
+#### Estrutura de Branches
+
+Este repositório usa `main` como branch padrão (não `master`). Sempre crie suas branches a partir de `main`:
+
+```bash
+# Clone o repositório
+git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
+cd Big-Data-Analytics-Platform
+
+# Certifique-se de estar na branch main
+git checkout main
+git pull origin main
+
+# Crie uma nova branch para sua feature
+git checkout -b feature/sua-feature
+```
+
+#### Processo de Contribuição
+
 - Faça um fork do repositório.
 - Crie uma nova branch para sua funcionalidade ou correção de bug (`git checkout -b feature/sua-feature` ou `bugfix/seu-bug`).
 - Faça suas alterações e certifique-se de que o código esteja formatado corretamente e siga as convenções de estilo existentes.
@@ -28,6 +47,8 @@ Bem-vindo ao projeto Big Data Analytics Platform! Agradecemos seu interesse em c
 - Envie suas alterações para o seu fork (`git push origin feature/sua-feature`).
 - Abra um Pull Request (PR) para a branch `main` do repositório original.
 - Forneça uma descrição detalhada do seu PR, explicando as alterações e o problema que ele resolve.
+
+> 💡 **Dica:** Se encontrar erros relacionados a `refs/heads/master`, consulte o [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ### 4. Revisão de Código
 
