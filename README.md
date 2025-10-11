@@ -107,6 +107,8 @@ Big-Data-Analytics-Platform/
 │   ├── index.html           # Página principal da plataforma
 │   └── styles.css           # Estilos CSS para a página web
 ├── .gitignore               # Arquivos a serem ignorados pelo Git
+├── AUDIT_REPORT.md          # Relatório completo de auditoria do repositório
+├── CHANGELOG.md             # Histórico de mudanças do projeto
 ├── CODE_OF_CONDUCT.md       # Código de Conduta
 ├── CONTRIBUTING.md          # Diretrizes para Contribuição
 ├── LICENSE                  # Licença do Projeto
@@ -283,6 +285,8 @@ A interface web básica (`web/index.html`) está configurada para ser servida vi
 
 Contribuições são bem-vindas! Por favor, leia o `CONTRIBUTING.md` para mais detalhes.
 
+Para um histórico completo de mudanças, consulte o [CHANGELOG.md](CHANGELOG.md).
+
 ### Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
@@ -363,6 +367,8 @@ Big-Data-Analytics-Platform/
 │   ├── index.html           # Main platform page
 │   └── styles.css           # CSS styles for the web page
 ├── .gitignore               # Files to be ignored by Git
+├── AUDIT_REPORT.md          # Complete repository audit report
+├── CHANGELOG.md             # Project change history
 ├── CODE_OF_CONDUCT.md       # Code of Conduct
 ├── CONTRIBUTING.md          # Contribution Guidelines
 ├── LICENSE                  # Project License
@@ -538,6 +544,8 @@ The basic web interface (`web/index.html`) is configured to be served via GitHub
 ### Contribution
 
 Contributions are welcome! Please read `CONTRIBUTING.md` for more details.
+
+For a complete history of changes, see the [CHANGELOG.md](CHANGELOG.md).
 
 ### License
 
