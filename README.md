@@ -114,6 +114,7 @@ Big-Data-Analytics-Platform/
 ├── CODE_OF_CONDUCT.md       # Código de Conduta
 ├── CONTRIBUTING.md          # Diretrizes para Contribuição
 ├── LICENSE                  # Licença do Projeto
+├── QUICK_REFERENCE.md       # Referência rápida para problemas com branches Git
 ├── README.md                # Este arquivo (documentação do projeto)
 ├── TROUBLESHOOTING.md       # Guia completo de solução de problemas
 └── requirements.txt         # Dependências do Python
@@ -211,7 +212,8 @@ python3 src/test_data_processor.py
 
 ### Solução de Problemas
 
-> 📚 Para um guia completo de solução de problemas, consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+> 📚 Para um guia completo de solução de problemas, consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
+> ⚡ Para referência rápida sobre o erro de branch Git, consulte [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 
 #### Erro: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
 
@@ -393,6 +395,7 @@ Big-Data-Analytics-Platform/
 ├── CODE_OF_CONDUCT.md       # Code of Conduct
 ├── CONTRIBUTING.md          # Contribution Guidelines
 ├── LICENSE                  # Project License
+├── QUICK_REFERENCE.md       # Quick reference for Git branch issues
 ├── README.md                # This file (project documentation)
 ├── TROUBLESHOOTING.md       # Complete troubleshooting guide
 └── requirements.txt         # Python dependencies
@@ -490,7 +493,8 @@ python3 src/test_data_processor.py
 
 ### Troubleshooting
 
-> 📚 For a complete troubleshooting guide, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+> 📚 For a complete troubleshooting guide, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
+> ⚡ For quick reference on Git branch error, see [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 
 #### Error: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
 

@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Git branch error documentation and solutions
   - Dynamic branch detection examples
   - Common issues and solutions
+- Quick reference guide (`QUICK_REFERENCE.md`)
+  - Fast lookup for Git branch error solutions
+  - Helper script command reference
+  - Branch structure overview
 - Branch helper utility script (`scripts/branch-helper.sh`)
   - Automatic default branch detection
   - Branch existence checking
@@ -20,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced README.md with Git branch troubleshooting
   - Added `refs/heads/master` error solution in both languages
   - Updated project structure to include new files
-  - References to comprehensive troubleshooting guide
+  - References to comprehensive troubleshooting guide and quick reference
 - Updated CONTRIBUTING.md with branch structure guidelines
   - Documented use of `main` as default branch
   - Added workflow for creating branches
