@@ -140,8 +140,8 @@ Big-Data-Analytics-Platform/
 │   ├── data_processor.py    # Script for data generation and analysis
 │   └── test_data_processor.py # Unit tests for the data processor
 ├── web/                     # Web interface files (GitHub Pages)
-│   ├── index.html           # Página principal da plataforma
-│   └── styles.css           # Estilos CSS para a página web
+│   ├── index.html           # Main platform page
+│   └── styles.css           # CSS styles for the web page
 ├── CODE_OF_CONDUCT.md       # Code of Conduct
 ├── CONTRIBUTING.md          # Contribution Guidelines
 ├── LICENSE                  # Project License
@@ -181,7 +181,7 @@ To set up and run this project locally, follow the steps below:
 
     This script will generate dummy data, perform a sales analysis by category, and save the results to `data/sales_summary.csv`.
 
-5.  **Run tests (optional):
+5.  **Run tests (optional):**
 
     ```bash
     python3 src/test_data_processor.py

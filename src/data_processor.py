@@ -7,7 +7,7 @@ def generate_dummy_data(num_rows=100):
     np.random.seed(42)
     data = {
         'product_id': np.random.randint(1, 10, num_rows),
-        'category': np.random.choice(['Eletronics', 'Clothing', 'Books', 'Food'], num_rows),
+        'category': np.random.choice(['Electronics', 'Clothing', 'Books', 'Food'], num_rows),
         'price': np.round(np.random.uniform(10, 500, num_rows), 2),
         'quantity': np.random.randint(1, 10, num_rows),
         'transaction_date': pd.to_datetime('2023-01-01') + pd.to_timedelta(np.random.randint(0, 365, num_rows), unit='D')
