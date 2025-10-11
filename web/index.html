@@ -3,57 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Data Analytics Platform</title>
+    <title>Big Data Analytics Platform - Sales Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Big Data Analytics Platform</h1>
+        <div class="header-content">
+            <h1>📊 Big Data Analytics Platform</h1>
+            <p class="subtitle">Sales Analysis Dashboard</p>
+        </div>
     </header>
+    
     <main>
-        <h2>Sales Summary by Category</h2>
-        <table id="sales-summary-table">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Total Sales Sum</th>
-                    <th>Average Sale Price</th>
-                    <th>Number of Transactions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be loaded here by JavaScript -->
-            </tbody>
-        </table>
-        <p>&copy; 2023 Big Data Analytics Platform</p>
+        <section class="intro">
+            <h2>Sales Summary by Category</h2>
+            <p>This dashboard displays real-time sales analytics aggregated by product category. 
+               Data is generated using Python and analyzed with Pandas.</p>
+        </section>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <h3>⚠️ Error Loading Data</h3>
+            <p id="error-message"></p>
+            <button onclick="location.reload()">Retry</button>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Categories</h3>
+                    <p id="total-categories" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Transactions</h3>
+                    <p id="total-transactions" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <p id="total-revenue" class="stat-value">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Sale</h3>
+                    <p id="avg-sale" class="stat-value">-</p>
+                </div>
+            </div>
+
+            <table id="sales-summary-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Category ▼</th>
+                        <th onclick="sortTable(1)">Total Sales ($) ▼</th>
+                        <th onclick="sortTable(2)">Average Sale Price ($) ▼</th>
+                        <th onclick="sortTable(3)">Transactions ▼</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be loaded here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="main-footer">
+            <p>Data analysis powered by Python, Pandas, and NumPy</p>
+            <p>&copy; 2023 Big Data Analytics Platform | Made with ❤️ by Gabriel Demetrios Lafis</p>
+        </footer>
     </main>
-    <footer>
-        <p>Data analysis powered by Python and Pandas.</p>
-    </footer>
 
     <script>
+        let tableData = [];
+
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(value);
+        }
+
+        function formatNumber(value) {
+            return new Intl.NumberFormat('en-US').format(value);
+        }
+
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error-message').textContent = message;
+        }
+
+        function sortTable(columnIndex) {
+            const tbody = document.querySelector('#sales-summary-table tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                let aVal = a.cells[columnIndex].textContent;
+                let bVal = b.cells[columnIndex].textContent;
+                
+                // Try to parse as number
+                const aNum = parseFloat(aVal.replace(/[$,]/g, ''));
+                const bNum = parseFloat(bVal.replace(/[$,]/g, ''));
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return bNum - aNum; // Descending for numbers
+                }
+                return aVal.localeCompare(bVal); // Ascending for text
+            });
+            
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             fetch('../data/sales_summary.csv')
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load data file. Please run the data processor first: python3 src/data_processor.py');
+                    }
+                    return response.text();
+                })
                 .then(csvText => {
                     const rows = csvText.split('\n').filter(row => row.trim() !== '');
                     const tableBody = document.querySelector('#sales-summary-table tbody');
 
+                    if (rows.length < 2) {
+                        throw new Error('CSV file is empty or invalid');
+                    }
+
+                    let totalTransactions = 0;
+                    let totalRevenue = 0;
+                    let totalSales = 0;
+
                     // Skip header row for data parsing
                     for (let i = 1; i < rows.length; i++) {
                         const cols = rows[i].split(',');
-                        if (cols.length === 4) { // Ensure correct number of columns
+                        if (cols.length === 4) {
+                            const category = cols[0];
+                            const salesSum = parseFloat(cols[1]);
+                            const avgPrice = parseFloat(cols[2]);
+                            const transactions = parseInt(cols[3]);
+
+                            totalTransactions += transactions;
+                            totalRevenue += salesSum;
+                            totalSales++;
+
                             const tr = document.createElement('tr');
-                            cols.forEach(col => {
-                                const td = document.createElement('td');
-                                td.textContent = parseFloat(col).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || col; // Format numbers
-                                tr.appendChild(td);
-                            });
+                            tr.innerHTML = `
+                                <td><strong>${category}</strong></td>
+                                <td>${formatCurrency(salesSum)}</td>
+                                <td>${formatCurrency(avgPrice)}</td>
+                                <td>${formatNumber(transactions)}</td>
+                            `;
                             tableBody.appendChild(tr);
                         }
                     }
+
+                    // Update statistics
+                    document.getElementById('total-categories').textContent = totalSales;
+                    document.getElementById('total-transactions').textContent = formatNumber(totalTransactions);
+                    document.getElementById('total-revenue').textContent = formatCurrency(totalRevenue);
+                    document.getElementById('avg-sale').textContent = formatCurrency(totalRevenue / totalTransactions);
+
+                    // Show content
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
                 })
-                .catch(error => console.error('Error loading the CSV file:', error));
+                .catch(error => {
+                    console.error('Error loading the CSV file:', error);
+                    showError(error.message || 'An unexpected error occurred while loading the data.');
+                });
         });
     </script>
 </body>
