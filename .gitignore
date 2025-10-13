@@ -12,6 +12,7 @@ __pycache__/
 
 # Generated data files
 data/*.csv
+data/*.json
 
 # IDE
 .vscode/
