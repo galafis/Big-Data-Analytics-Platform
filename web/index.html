@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Data Analytics Platform - Sales Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -52,6 +53,18 @@
                 </div>
             </div>
 
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>📊 Total Sales by Category</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>📈 Transactions by Category</h3>
+                    <canvas id="transactionsChart"></canvas>
+                </div>
+            </div>
+
             <table id="sales-summary-table">
                 <thead>
                     <tr>
@@ -75,6 +88,8 @@
 
     <script>
         let tableData = [];
+        let salesChart = null;
+        let transactionsChart = null;
 
         function formatCurrency(value) {
             return new Intl.NumberFormat('en-US', {
@@ -93,6 +108,94 @@
             document.getElementById('loading').style.display = 'none';
             document.getElementById('error').style.display = 'block';
             document.getElementById('error-message').textContent = message;
+        }
+
+        function createCharts(categories, salesData, transactionsData) {
+            // Color palette for charts
+            const colors = [
+                'rgba(102, 126, 234, 0.8)',
+                'rgba(118, 75, 162, 0.8)',
+                'rgba(237, 100, 166, 0.8)',
+                'rgba(255, 154, 158, 0.8)'
+            ];
+
+            // Sales Chart
+            const salesCtx = document.getElementById('salesChart').getContext('2d');
+            if (salesChart) salesChart.destroy();
+            salesChart = new Chart(salesCtx, {
+                type: 'bar',
+                data: {
+                    labels: categories,
+                    datasets: [{
+                        label: 'Total Sales ($)',
+                        data: salesData,
+                        backgroundColor: colors,
+                        borderColor: colors.map(c => c.replace('0.8', '1')),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Transactions Chart
+            const transCtx = document.getElementById('transactionsChart').getContext('2d');
+            if (transactionsChart) transactionsChart.destroy();
+            transactionsChart = new Chart(transCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: categories,
+                    datasets: [{
+                        label: 'Transactions',
+                        data: transactionsData,
+                        backgroundColor: colors,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = ((context.parsed / total) * 100).toFixed(1);
+                                    return context.label + ': ' + context.parsed + ' (' + percentage + '%)';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
         }
 
         function sortTable(columnIndex) {
@@ -137,6 +240,11 @@
                     let totalRevenue = 0;
                     let totalSales = 0;
 
+                    // Arrays for charts
+                    const categories = [];
+                    const salesData = [];
+                    const transactionsData = [];
+
                     // Skip header row for data parsing
                     for (let i = 1; i < rows.length; i++) {
                         const cols = rows[i].split(',');
@@ -149,6 +257,11 @@
                             totalTransactions += transactions;
                             totalRevenue += salesSum;
                             totalSales++;
+
+                            // Store data for charts
+                            categories.push(category);
+                            salesData.push(salesSum);
+                            transactionsData.push(transactions);
 
                             const tr = document.createElement('tr');
                             tr.innerHTML = `
@@ -166,6 +279,9 @@
                     document.getElementById('total-transactions').textContent = formatNumber(totalTransactions);
                     document.getElementById('total-revenue').textContent = formatCurrency(totalRevenue);
                     document.getElementById('avg-sale').textContent = formatCurrency(totalRevenue / totalTransactions);
+
+                    // Create charts
+                    createCharts(categories, salesData, transactionsData);
 
                     // Show content
                     document.getElementById('loading').style.display = 'none';

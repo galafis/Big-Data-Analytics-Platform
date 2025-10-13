@@ -5,6 +5,71 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2025-10-13
+
+### Added
+- Interactive data visualizations with Chart.js
+  - Bar chart showing total sales by category
+  - Pie chart showing transaction distribution
+  - Responsive chart containers with modern styling
+- Structured logging system
+  - Detailed logs for all operations (INFO, ERROR levels)
+  - Timestamp and logger name in all log messages
+  - Better debugging and error tracking capabilities
+- Multiple export format support
+  - JSON export functionality added (`save_to_json()`)
+  - Generic `export_data()` function for multiple formats
+  - Automatic export to both CSV and JSON formats
+- Automated setup script (`setup.py`)
+  - Python version validation (3.7+)
+  - Automatic dependency installation
+  - Directory creation (data, logs)
+  - Automated test execution
+  - Initial data generation
+  - Colorful progress messages
+- Enhanced badges in README.md
+  - Code style badge (PEP8)
+  - Documentation badge
+  - Version-specific library badges
+  - "Made with ❤️" badge
+- Type hints for all functions
+  - Better IDE support and code completion
+  - Improved code documentation
+  - Type safety improvements
+
+### Changed
+- Updated web interface with chart sections
+  - New charts-section grid layout
+  - Responsive design for charts on mobile
+  - Enhanced visual hierarchy
+- Enhanced README.md documentation
+  - Added setup script usage instructions
+  - Updated feature list with new capabilities
+  - Marked implemented features in roadmap
+  - Expanded "How to Use" section with automated setup
+  - Updated dashboard features list
+- Improved Python code organization
+  - Separated save functions for different formats
+  - Added `export_data()` for unified export
+  - Better error messages with logging
+  - More descriptive function documentation
+- Updated .gitignore
+  - Added `data/*.json` to ignore generated JSON files
+
+### Enhanced
+- Dashboard user experience
+  - More engaging visualizations
+  - Better data presentation
+  - Professional appearance with charts
+- Code quality and maintainability
+  - Structured logging for debugging
+  - Type hints for better IDE support
+  - More modular function design
+- Documentation clarity
+  - Bilingual updates maintained
+  - More detailed installation instructions
+  - Better feature descriptions
+
 ## [2.1.0] - 2025-10-11
 
 ### Added

@@ -96,6 +96,31 @@ main {
     margin-top: 0.2em;
 }
 
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.chart-container {
+    background: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 350px;
+}
+
+.chart-container h3 {
+    color: #1e3c72;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.chart-container canvas {
+    max-height: 300px;
+}
+
 .loading, .error {
     text-align: center;
     padding: 3em;
@@ -216,6 +241,14 @@ td strong {
     
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        min-height: 300px;
     }
     
     table {

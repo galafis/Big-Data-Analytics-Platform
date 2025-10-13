@@ -1,10 +1,13 @@
 # Big Data Analytics Platform
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-orange.svg)](https://pandas.pydata.org/)
-[![NumPy](https://img.shields.io/badge/NumPy-blue.svg)](https://numpy.org/)
+[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-orange.svg)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-blue.svg)](https://numpy.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/galafis/Big-Data-Analytics-Platform/actions)
+[![Code Style](https://img.shields.io/badge/code%20style-PEP8-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Documentation](https://img.shields.io/badge/docs-bilingual-blue.svg)](README.md)
+[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/galafis)
 
 ![Big Data Analytics Platform](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=400&fit=crop&q=80)
 
@@ -48,9 +51,12 @@ Este repositório apresenta uma **Plataforma de Análise de Big Data** em estág
 -   **Geração de Dados Dummy:** Simula a criação de grandes conjuntos de dados transacionais.
 -   **Processamento e Análise:** Realiza análises básicas de vendas por categoria, calculando somas, médias e contagens.
 -   **Estrutura Modular:** Organização clara do código e dos dados para facilitar a compreensão e expansão.
--   **Interface Web:** Visualização de resultados através de uma interface web simples e responsiva.
+-   **Interface Web:** Visualização de resultados através de uma interface web simples e responsiva com gráficos interativos.
 -   **Testes Automatizados:** Suite de testes unitários para garantir a qualidade do código.
 -   **CI/CD:** Integração contínua configurada com GitHub Actions.
+-   **Logging Estruturado:** Sistema de logs detalhado para rastreamento de operações.
+-   **Exportação Múltipla:** Suporte para exportar dados em CSV e JSON.
+-   **Visualizações Interativas:** Gráficos de barras e pizza usando Chart.js.
 
 ### Arquitetura
 
@@ -100,6 +106,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions para testes automatizados
 ├── data/                    # Armazena dados processados e resultados de análises
 │   └── sales_summary.csv    # Exemplo de resultado de análise (gerado)
+├── examples/                # Scripts de exemplo demonstrando uso da plataforma
+│   └── basic_usage.py       # Exemplo básico de análise de dados
 ├── scripts/                 # Scripts auxiliares
 │   └── branch-helper.sh     # Script auxiliar para detecção de branch
 ├── src/                     # Código fonte principal
@@ -117,12 +125,37 @@ Big-Data-Analytics-Platform/
 ├── QUICK_REFERENCE.md       # Referência rápida para problemas com branches Git
 ├── README.md                # Este arquivo (documentação do projeto)
 ├── TROUBLESHOOTING.md       # Guia completo de solução de problemas
-└── requirements.txt         # Dependências do Python
+├── requirements.txt         # Dependências do Python
+└── setup.py                 # Script de instalação automatizada
 ```
 
 ### Como Usar
 
 Para configurar e executar este projeto localmente, siga os passos abaixo:
+
+**Opção 1: Setup Automático (Recomendado)**
+
+1.  **Clone o repositório:**
+
+    ```bash
+    git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
+    cd Big-Data-Analytics-Platform
+    ```
+
+2.  **Execute o script de setup:**
+
+    ```bash
+    python3 setup.py
+    ```
+
+    Este script irá automaticamente:
+    - Verificar a versão do Python
+    - Instalar todas as dependências
+    - Criar diretórios necessários
+    - Executar testes
+    - Gerar dados iniciais
+
+**Opção 2: Setup Manual**
 
 1.  **Clone o repositório:**
 
@@ -150,7 +183,7 @@ Para configurar e executar este projeto localmente, siga os passos abaixo:
     python3 src/data_processor.py
     ```
 
-    Este script irá gerar dados dummy, realizar uma análise de vendas por categoria e salvar os resultados em `data/sales_summary.csv`.
+    Este script irá gerar dados dummy, realizar uma análise de vendas por categoria e salvar os resultados em `data/sales_summary.csv` e `data/sales_summary.json`.
 
 5.  **Execute os testes (opcional):**
 
@@ -159,6 +192,20 @@ Para configurar e executar este projeto localmente, siga os passos abaixo:
     ```
 
 ### Exemplos de Uso
+
+#### Script de Exemplo Completo
+
+Incluímos um script de exemplo que demonstra o uso completo da plataforma:
+
+```bash
+python3 examples/basic_usage.py
+```
+
+Este script demonstra:
+- Geração de dados dummy personalizados
+- Análise de vendas por categoria
+- Cálculo de métricas adicionais
+- Exportação em múltiplos formatos
 
 #### Gerando e Analisando Dados
 
@@ -258,12 +305,13 @@ Roadmap de funcionalidades planejadas:
 - [ ] **Suporte a múltiplas fontes de dados**
   - Integração com bancos de dados (PostgreSQL, MongoDB)
   - Leitura de arquivos CSV, JSON, Parquet
+  - ✅ Exportação em JSON (implementado)
   - Conexão com APIs externas
 
-- [ ] **Visualizações Avançadas**
-  - Gráficos interativos com Plotly/Chart.js
-  - Dashboard em tempo real
-  - Mapas de calor e análises temporais
+- [x] **Visualizações Avançadas**
+  - ✅ Gráficos interativos com Chart.js
+  - [ ] Dashboard em tempo real
+  - [ ] Mapas de calor e análises temporais
 
 - [ ] **Machine Learning**
   - Previsão de vendas
@@ -280,11 +328,11 @@ Roadmap de funcionalidades planejadas:
   - Autenticação e autorização
   - Documentação com Swagger
 
-- [ ] **Melhorias de Qualidade**
-  - Logging estruturado
-  - Tratamento de erros robusto
-  - Validação de dados de entrada
-  - Métricas de performance
+- [x] **Melhorias de Qualidade**
+  - ✅ Logging estruturado (implementado)
+  - ✅ Tratamento de erros robusto (implementado)
+  - ✅ Validação de dados de entrada (implementado)
+  - [ ] Métricas de performance
 
 ### GitHub Pages
 
@@ -297,6 +345,8 @@ A interface web básica (`web/index.html`) está configurada para ser servida vi
 **Recursos do Dashboard:**
 - 📊 Estatísticas em tempo real (categorias, transações, receita, média de vendas)
 - 📋 Tabela interativa com dados de vendas por categoria
+- 📈 Gráfico de barras interativo mostrando vendas totais por categoria
+- 🥧 Gráfico de pizza mostrando distribuição de transações
 - 🔄 Ordenação de colunas com um clique
 - 📱 Design responsivo para mobile e desktop
 - ⚡ Carregamento assíncrono de dados
@@ -307,6 +357,8 @@ A interface web básica (`web/index.html`) está configurada para ser servida vi
 Contribuições são bem-vindas! Por favor, leia o `CONTRIBUTING.md` para mais detalhes.
 
 Para um histórico completo de mudanças, consulte o [CHANGELOG.md](CHANGELOG.md).
+
+Para documentação detalhada da API, consulte [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
 
 ### Licença
 
@@ -329,9 +381,12 @@ This repository presents an initial **Big Data Analytics Platform**, focused on 
 -   **Dummy Data Generation:** Simulates the creation of large transactional datasets.
 -   **Processing and Analysis:** Performs basic sales analysis by category, calculating sums, averages, and counts.
 -   **Modular Structure:** Clear organization of code and data to facilitate understanding and expansion.
--   **Web Interface:** Result visualization through a simple and responsive web interface.
+-   **Web Interface:** Result visualization through a simple and responsive web interface with interactive charts.
 -   **Automated Tests:** Unit test suite to ensure code quality.
 -   **CI/CD:** Continuous integration configured with GitHub Actions.
+-   **Structured Logging:** Detailed logging system for operation tracking.
+-   **Multiple Export Formats:** Support for exporting data in CSV and JSON.
+-   **Interactive Visualizations:** Bar and pie charts using Chart.js.
 
 ### Architecture
 
@@ -381,6 +436,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions for automated testing
 ├── data/                    # Stores processed data and analysis results
 │   └── sales_summary.csv    # Example of analysis result (generated)
+├── examples/                # Example scripts demonstrating platform usage
+│   └── basic_usage.py       # Basic data analysis example
 ├── scripts/                 # Helper scripts
 │   └── branch-helper.sh     # Branch detection helper script
 ├── src/                     # Main source code
@@ -398,7 +455,8 @@ Big-Data-Analytics-Platform/
 ├── QUICK_REFERENCE.md       # Quick reference for Git branch issues
 ├── README.md                # This file (project documentation)
 ├── TROUBLESHOOTING.md       # Complete troubleshooting guide
-└── requirements.txt         # Python dependencies
+├── requirements.txt         # Python dependencies
+└── setup.py                 # Automated installation script
 ```
 
 ### How to Use
@@ -440,6 +498,20 @@ To set up and run this project locally, follow the steps below:
     ```
 
 ### Usage Examples
+
+#### Complete Example Script
+
+We include an example script that demonstrates complete platform usage:
+
+```bash
+python3 examples/basic_usage.py
+```
+
+This script demonstrates:
+- Custom dummy data generation
+- Sales analysis by category
+- Additional metrics calculation
+- Export to multiple formats
 
 #### Generating and Analyzing Data
 
@@ -539,12 +611,13 @@ Planned feature roadmap:
 - [ ] **Multiple Data Source Support**
   - Database integration (PostgreSQL, MongoDB)
   - Read CSV, JSON, Parquet files
+  - ✅ JSON export (implemented)
   - External API connections
 
-- [ ] **Advanced Visualizations**
-  - Interactive charts with Plotly/Chart.js
-  - Real-time dashboard
-  - Heat maps and temporal analysis
+- [x] **Advanced Visualizations**
+  - ✅ Interactive charts with Chart.js
+  - [ ] Real-time dashboard
+  - [ ] Heat maps and temporal analysis
 
 - [ ] **Machine Learning**
   - Sales forecasting
@@ -561,11 +634,11 @@ Planned feature roadmap:
   - Authentication and authorization
   - Swagger documentation
 
-- [ ] **Quality Improvements**
-  - Structured logging
-  - Robust error handling
-  - Input data validation
-  - Performance metrics
+- [x] **Quality Improvements**
+  - ✅ Structured logging (implemented)
+  - ✅ Robust error handling (implemented)
+  - ✅ Input data validation (implemented)
+  - [ ] Performance metrics
 
 ### GitHub Pages
 
@@ -578,6 +651,8 @@ The basic web interface (`web/index.html`) is configured to be served via GitHub
 **Dashboard Features:**
 - 📊 Real-time statistics (categories, transactions, revenue, average sales)
 - 📋 Interactive table with sales data by category
+- 📈 Interactive bar chart showing total sales by category
+- 🥧 Pie chart showing transaction distribution
 - 🔄 Column sorting with one click
 - 📱 Responsive design for mobile and desktop
 - ⚡ Asynchronous data loading
@@ -588,6 +663,8 @@ The basic web interface (`web/index.html`) is configured to be served via GitHub
 Contributions are welcome! Please read `CONTRIBUTING.md` for more details.
 
 For a complete history of changes, see the [CHANGELOG.md](CHANGELOG.md).
+
+For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
 
 ### License
 
