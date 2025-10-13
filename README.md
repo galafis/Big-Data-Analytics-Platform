@@ -106,6 +106,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions para testes automatizados
 ├── data/                    # Armazena dados processados e resultados de análises
 │   └── sales_summary.csv    # Exemplo de resultado de análise (gerado)
+├── examples/                # Scripts de exemplo demonstrando uso da plataforma
+│   └── basic_usage.py       # Exemplo básico de análise de dados
 ├── scripts/                 # Scripts auxiliares
 │   └── branch-helper.sh     # Script auxiliar para detecção de branch
 ├── src/                     # Código fonte principal
@@ -190,6 +192,20 @@ Para configurar e executar este projeto localmente, siga os passos abaixo:
     ```
 
 ### Exemplos de Uso
+
+#### Script de Exemplo Completo
+
+Incluímos um script de exemplo que demonstra o uso completo da plataforma:
+
+```bash
+python3 examples/basic_usage.py
+```
+
+Este script demonstra:
+- Geração de dados dummy personalizados
+- Análise de vendas por categoria
+- Cálculo de métricas adicionais
+- Exportação em múltiplos formatos
 
 #### Gerando e Analisando Dados
 
@@ -342,6 +358,8 @@ Contribuições são bem-vindas! Por favor, leia o `CONTRIBUTING.md` para mais d
 
 Para um histórico completo de mudanças, consulte o [CHANGELOG.md](CHANGELOG.md).
 
+Para documentação detalhada da API, consulte [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
+
 ### Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
@@ -418,6 +436,8 @@ Big-Data-Analytics-Platform/
 │       └── test.yml         # GitHub Actions for automated testing
 ├── data/                    # Stores processed data and analysis results
 │   └── sales_summary.csv    # Example of analysis result (generated)
+├── examples/                # Example scripts demonstrating platform usage
+│   └── basic_usage.py       # Basic data analysis example
 ├── scripts/                 # Helper scripts
 │   └── branch-helper.sh     # Branch detection helper script
 ├── src/                     # Main source code
@@ -478,6 +498,20 @@ To set up and run this project locally, follow the steps below:
     ```
 
 ### Usage Examples
+
+#### Complete Example Script
+
+We include an example script that demonstrates complete platform usage:
+
+```bash
+python3 examples/basic_usage.py
+```
+
+This script demonstrates:
+- Custom dummy data generation
+- Sales analysis by category
+- Additional metrics calculation
+- Export to multiple formats
 
 #### Generating and Analyzing Data
 
@@ -629,6 +663,8 @@ The basic web interface (`web/index.html`) is configured to be served via GitHub
 Contributions are welcome! Please read `CONTRIBUTING.md` for more details.
 
 For a complete history of changes, see the [CHANGELOG.md](CHANGELOG.md).
+
+For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
 
 ### License
 
