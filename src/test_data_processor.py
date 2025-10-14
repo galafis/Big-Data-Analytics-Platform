@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import sys
 from data_processor import generate_dummy_data, analyze_sales_by_category
 

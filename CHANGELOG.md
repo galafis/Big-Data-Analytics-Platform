@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.1] - 2025-10-14
+
+### Changed
+- Cleaned up unused imports for better code quality
+  - Removed `Optional`, `Literal`, `json` from `data_processor.py`
+  - Removed `numpy` from `test_data_processor.py`
+- Updated requirements.txt with version constraints
+  - `pandas>=2.0.0` for compatibility
+  - `numpy>=1.20.0` for compatibility
+
+### Added
+- Comprehensive audit report (COMPREHENSIVE_AUDIT_REPORT.md)
+  - Complete repository audit results
+  - Code quality analysis
+  - Documentation review
+  - Test coverage validation
+  - Recommendations and improvements
+
+### Fixed
+- Code cleanup to remove unnecessary dependencies
+- Improved requirements specification for better reproducibility
+
 ## [2.2.0] - 2025-10-13
 
 ### Added

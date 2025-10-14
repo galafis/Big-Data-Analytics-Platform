@@ -118,6 +118,7 @@ Big-Data-Analytics-Platform/
 │   └── styles.css           # Estilos CSS para a página web
 ├── .gitignore               # Arquivos a serem ignorados pelo Git
 ├── AUDIT_REPORT.md          # Relatório completo de auditoria do repositório
+├── COMPREHENSIVE_AUDIT_REPORT.md # Relatório de auditoria abrangente (Outubro 2025)
 ├── CHANGELOG.md             # Histórico de mudanças do projeto
 ├── CODE_OF_CONDUCT.md       # Código de Conduta
 ├── CONTRIBUTING.md          # Diretrizes para Contribuição
@@ -448,6 +449,7 @@ Big-Data-Analytics-Platform/
 │   └── styles.css           # CSS styles for the web page
 ├── .gitignore               # Files to be ignored by Git
 ├── AUDIT_REPORT.md          # Complete repository audit report
+├── COMPREHENSIVE_AUDIT_REPORT.md # Comprehensive audit report (October 2025)
 ├── CHANGELOG.md             # Project change history
 ├── CODE_OF_CONDUCT.md       # Code of Conduct
 ├── CONTRIBUTING.md          # Contribution Guidelines
