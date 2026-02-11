@@ -4,7 +4,6 @@
 [![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-orange.svg)](https://pandas.pydata.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-blue.svg)](https://numpy.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/galafis/Big-Data-Analytics-Platform/actions)
 [![Code Style](https://img.shields.io/badge/code%20style-PEP8-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
 [![Documentation](https://img.shields.io/badge/docs-bilingual-blue.svg)](README.md)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/galafis)
@@ -53,7 +52,6 @@ Este repositório apresenta uma **Plataforma de Análise de Big Data** em estág
 -   **Estrutura Modular:** Organização clara do código e dos dados para facilitar a compreensão e expansão.
 -   **Interface Web:** Visualização de resultados através de uma interface web simples e responsiva com gráficos interativos.
 -   **Testes Automatizados:** Suite de testes unitários para garantir a qualidade do código.
--   **CI/CD:** Integração contínua configurada com GitHub Actions.
 -   **Logging Estruturado:** Sistema de logs detalhado para rastreamento de operações.
 -   **Exportação Múltipla:** Suporte para exportar dados em CSV e JSON.
 -   **Visualizações Interativas:** Gráficos de barras e pizza usando Chart.js.
@@ -101,9 +99,6 @@ O projeto segue uma arquitetura modular simples:
 
 ```
 Big-Data-Analytics-Platform/
-├── .github/                 # Configurações do GitHub (ex: Workflows, GitHub Pages)
-│   └── workflows/           
-│       └── test.yml         # GitHub Actions para testes automatizados
 ├── data/                    # Armazena dados processados e resultados de análises
 │   └── sales_summary.csv    # Exemplo de resultado de análise (gerado)
 ├── examples/                # Scripts de exemplo demonstrando uso da plataforma
@@ -265,7 +260,7 @@ python3 src/test_data_processor.py
 
 #### Erro: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
 
-**Causa:** Este repositório usa `main` como branch padrão, não `master`. Workflows ou scripts que referenciam `master` falharão.
+**Causa:** Este repositório usa `main` como branch padrão, não `master`. Scripts que referenciam `master` falharão.
 
 **Solução:** Use detecção dinâmica de branch ou atualize referências para `main`:
 ```bash
@@ -384,7 +379,6 @@ This repository presents an initial **Big Data Analytics Platform**, focused on 
 -   **Modular Structure:** Clear organization of code and data to facilitate understanding and expansion.
 -   **Web Interface:** Result visualization through a simple and responsive web interface with interactive charts.
 -   **Automated Tests:** Unit test suite to ensure code quality.
--   **CI/CD:** Continuous integration configured with GitHub Actions.
 -   **Structured Logging:** Detailed logging system for operation tracking.
 -   **Multiple Export Formats:** Support for exporting data in CSV and JSON.
 -   **Interactive Visualizations:** Bar and pie charts using Chart.js.
@@ -432,9 +426,6 @@ The project follows a simple modular architecture:
 
 ```
 Big-Data-Analytics-Platform/
-├── .github/                 # GitHub configurations (e.g., Workflows, GitHub Pages)
-│   └── workflows/           
-│       └── test.yml         # GitHub Actions for automated testing
 ├── data/                    # Stores processed data and analysis results
 │   └── sales_summary.csv    # Example of analysis result (generated)
 ├── examples/                # Example scripts demonstrating platform usage
@@ -572,7 +563,7 @@ python3 src/test_data_processor.py
 
 #### Error: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
 
-**Cause:** This repository uses `main` as the default branch, not `master`. Workflows or scripts that reference `master` will fail.
+**Cause:** This repository uses `main` as the default branch, not `master`. Scripts that reference `master` will fail.
 
 **Solution:** Use dynamic branch detection or update references to `main`:
 ```bash
