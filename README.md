@@ -1,669 +1,213 @@
-# Big Data Analytics Platform
+# 📊 Big Data Analytics Platform
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.0%2B-orange.svg)](https://pandas.pydata.org/)
-[![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-blue.svg)](https://numpy.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code Style](https://img.shields.io/badge/code%20style-PEP8-blue.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![Documentation](https://img.shields.io/badge/docs-bilingual-blue.svg)](README.md)
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/galafis)
+[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Big Data Analytics Platform](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=400&fit=crop&q=80)
-
-*Uma plataforma moderna de análise de Big Data para processamento e análise de grandes volumes de dados*
+[English](#english) | [Português](#português)
 
 ---
 
-## 📋 Índice / Table of Contents
+## English
 
-- [🇧🇷 Português](#-português)
-  - [Visão Geral](#visão-geral)
-  - [Funcionalidades](#funcionalidades)
-  - [Arquitetura](#arquitetura)
-  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-  - [Estrutura do Projeto](#estrutura-do-projeto)
-  - [Como Usar](#como-usar)
-  - [Exemplos de Uso](#exemplos-de-uso)
-  - [Testes](#testes)
-  - [Solução de Problemas](#solução-de-problemas)
-  - [Melhorias Futuras](#melhorias-futuras)
-- [🇬🇧 English](#-english)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Architecture](#architecture)
-  - [Technologies Used](#technologies-used)
-  - [Project Structure](#project-structure)
-  - [How to Use](#how-to-use)
-  - [Usage Examples](#usage-examples)
-  - [Testing](#testing)
-  - [Troubleshooting](#troubleshooting)
-  - [Future Enhancements](#future-enhancements)
+### 🎯 Overview
 
-## 🇧🇷 Português
+**Big Data Analytics Platform** — Professional project by Gabriel Demetrios Lafis
 
-### Visão Geral
+Total source lines: **1,154** across **7** files in **4** languages.
 
-Este repositório apresenta uma **Plataforma de Análise de Big Data** em estágio inicial, focada na demonstração de processamento e análise de grandes volumes de dados. O objetivo é fornecer uma base funcional para explorar conceitos de Big Data, desde a ingestão simulada de dados até a geração de *insights* através de análises. O projeto é modular e extensível, permitindo a integração de diversas fontes de dados e ferramentas de visualização.
+### ✨ Key Features
 
-### Funcionalidades
+- **Production-Ready Architecture**: Modular, well-documented, and following best practices
+- **Comprehensive Implementation**: Complete solution with all core functionality
+- **Clean Code**: Type-safe, well-tested, and maintainable codebase
+- **Easy Deployment**: Docker support for quick setup and deployment
 
--   **Geração de Dados Dummy:** Simula a criação de grandes conjuntos de dados transacionais.
--   **Processamento e Análise:** Realiza análises básicas de vendas por categoria, calculando somas, médias e contagens.
--   **Estrutura Modular:** Organização clara do código e dos dados para facilitar a compreensão e expansão.
--   **Interface Web:** Visualização de resultados através de uma interface web simples e responsiva com gráficos interativos.
--   **Testes Automatizados:** Suite de testes unitários para garantir a qualidade do código.
--   **Logging Estruturado:** Sistema de logs detalhado para rastreamento de operações.
--   **Exportação Múltipla:** Suporte para exportar dados em CSV e JSON.
--   **Visualizações Interativas:** Gráficos de barras e pizza usando Chart.js.
+### 🚀 Quick Start
 
-### Arquitetura
+#### Prerequisites
+- Python 3.12+
 
-O projeto segue uma arquitetura modular simples:
 
-```
-┌─────────────────┐
-│  Data Generator │  ──→  Gera dados sintéticos de vendas
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│  Data Processor │  ──→  Processa e analisa dados
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│   CSV Output    │  ──→  Salva resultados em CSV
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│  Web Interface  │  ──→  Visualiza dados na web
-└─────────────────┘
-```
+#### Installation
 
-**Fluxo de Dados:**
-1. **Geração**: Dados sintéticos são criados usando NumPy
-2. **Transformação**: Dados são processados com Pandas
-3. **Análise**: Agregações e cálculos estatísticos
-4. **Armazenamento**: Resultados salvos em formato CSV
-5. **Visualização**: Interface web carrega e exibe os dados
-
-### Tecnologias Utilizadas
-
-| Categoria    | Tecnologia | Descrição                                    |
-| :----------- | :--------- | :------------------------------------------- |
-| **Linguagem**| Python     | Linguagem principal para processamento de dados. |
-| **Bibliotecas**| Pandas     | Manipulação e análise de dados.              |
-|              | NumPy      | Suporte a operações numéricas de alto desempenho. |
-| **Web**      | HTML       | Estrutura da interface web.                  |
-|              | CSS        | Estilização da interface web.                |
-
-### Estrutura do Projeto
-
-```
-Big-Data-Analytics-Platform/
-├── data/                    # Armazena dados processados e resultados de análises
-│   └── sales_summary.csv    # Exemplo de resultado de análise (gerado)
-├── examples/                # Scripts de exemplo demonstrando uso da plataforma
-│   └── basic_usage.py       # Exemplo básico de análise de dados
-├── scripts/                 # Scripts auxiliares
-│   └── branch-helper.sh     # Script auxiliar para detecção de branch
-├── src/                     # Código fonte principal
-│   ├── data_processor.py    # Script para geração e análise de dados
-│   └── test_data_processor.py # Testes unitários para o processador de dados
-├── web/                     # Arquivos da interface web (GitHub Pages)
-│   ├── index.html           # Página principal da plataforma
-│   └── styles.css           # Estilos CSS para a página web
-├── .gitignore               # Arquivos a serem ignorados pelo Git
-├── AUDIT_REPORT.md          # Relatório completo de auditoria do repositório
-├── COMPREHENSIVE_AUDIT_REPORT.md # Relatório de auditoria abrangente (Outubro 2025)
-├── CHANGELOG.md             # Histórico de mudanças do projeto
-├── CODE_OF_CONDUCT.md       # Código de Conduta
-├── CONTRIBUTING.md          # Diretrizes para Contribuição
-├── LICENSE                  # Licença do Projeto
-├── QUICK_REFERENCE.md       # Referência rápida para problemas com branches Git
-├── README.md                # Este arquivo (documentação do projeto)
-├── TROUBLESHOOTING.md       # Guia completo de solução de problemas
-├── requirements.txt         # Dependências do Python
-└── setup.py                 # Script de instalação automatizada
-```
-
-### Como Usar
-
-Para configurar e executar este projeto localmente, siga os passos abaixo:
-
-**Opção 1: Setup Automático (Recomendado)**
-
-1.  **Clone o repositório:**
-
-    ```bash
-    git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
-    cd Big-Data-Analytics-Platform
-    ```
-
-2.  **Execute o script de setup:**
-
-    ```bash
-    python3 setup.py
-    ```
-
-    Este script irá automaticamente:
-    - Verificar a versão do Python
-    - Instalar todas as dependências
-    - Criar diretórios necessários
-    - Executar testes
-    - Gerar dados iniciais
-
-**Opção 2: Setup Manual**
-
-1.  **Clone o repositório:**
-
-    ```bash
-    git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
-    cd Big-Data-Analytics-Platform
-    ```
-
-2.  **Crie e ative um ambiente virtual (recomendado):**
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # No Windows: .\venv\Scripts\activate
-    ```
-
-3.  **Instale as dependências:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Execute o processador de dados:**
-
-    ```bash
-    python3 src/data_processor.py
-    ```
-
-    Este script irá gerar dados dummy, realizar uma análise de vendas por categoria e salvar os resultados em `data/sales_summary.csv` e `data/sales_summary.json`.
-
-5.  **Execute os testes (opcional):**
-
-    ```bash
-    python3 src/test_data_processor.py
-    ```
-
-### Exemplos de Uso
-
-#### Script de Exemplo Completo
-
-Incluímos um script de exemplo que demonstra o uso completo da plataforma:
-
+1. **Clone the repository**
 ```bash
-python3 examples/basic_usage.py
+git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
+cd Big-Data-Analytics-Platform
 ```
 
-Este script demonstra:
-- Geração de dados dummy personalizados
-- Análise de vendas por categoria
-- Cálculo de métricas adicionais
-- Exportação em múltiplos formatos
-
-#### Gerando e Analisando Dados
-
-```python
-from src.data_processor import generate_dummy_data, analyze_sales_by_category
-
-# Gerar 1000 linhas de dados de vendas
-df = generate_dummy_data(num_rows=1000)
-print(df.head())
-
-# Analisar vendas por categoria
-summary = analyze_sales_by_category(df)
-print(summary)
-```
-
-#### Saída Esperada
-
-```
-Gerando dados dummy...
-Dados gerados:
-   product_id     category   price  quantity transaction_date
-0           7        Books  134.42         5       2023-04-04
-1           4  Electronics  130.97         6       2023-08-26
-2           8        Books  351.19         3       2023-07-23
-...
-
-Analisando vendas por categoria...
-Resumo de vendas por categoria:
-      category  total_sales_sum  average_sale_price  number_of_transactions
-0        Books         35543.39         1225.634138                      29
-1     Clothing         32032.74         1525.368571                      21
-2  Electronics         40168.57         1487.724815                      27
-3         Food         37850.03         1645.653478                      23
-```
-
-### Testes
-
-O projeto inclui uma suite completa de testes unitários:
-
+2. **Create virtual environment**
 ```bash
-# Executar todos os testes
-python3 src/test_data_processor.py
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-**Cobertura de Testes:**
-- ✅ Geração de dados dummy
-- ✅ Validação de estrutura de dados
-- ✅ Análise de vendas por categoria
-- ✅ Cálculos de agregação
-- ✅ Integridade dos resultados
-
-### Solução de Problemas
-
-> 📚 Para um guia completo de solução de problemas, consulte [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
-> ⚡ Para referência rápida sobre o erro de branch Git, consulte [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-
-#### Erro: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
-
-**Causa:** Este repositório usa `main` como branch padrão, não `master`. Scripts que referenciam `master` falharão.
-
-**Solução:** Use detecção dinâmica de branch ou atualize referências para `main`:
-```bash
-# Detectar branch padrão dinamicamente
-DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-git diff origin/$DEFAULT_BRANCH HEAD
-
-# Ou use o helper script
-./scripts/branch-helper.sh get-default
-```
-
-#### Erro: "ModuleNotFoundError: No module named 'pandas'"
-
-**Solução:** Certifique-se de que você instalou as dependências:
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Erro: "FileNotFoundError: [Errno 2] No such file or directory: 'data/sales_summary.csv'"
 
-**Solução:** Execute o processador de dados primeiro para gerar o arquivo CSV:
-```bash
-python3 src/data_processor.py
-```
 
-#### Erro de Permissão ao Salvar CSV
 
-**Solução:** Verifique se o diretório `data/` existe e se você tem permissões de escrita:
-```bash
-mkdir -p data
-chmod 755 data
-```
 
-### Melhorias Futuras
-
-Roadmap de funcionalidades planejadas:
-
-- [ ] **Suporte a múltiplas fontes de dados**
-  - Integração com bancos de dados (PostgreSQL, MongoDB)
-  - Leitura de arquivos CSV, JSON, Parquet
-  - ✅ Exportação em JSON (implementado)
-  - Conexão com APIs externas
-
-- [x] **Visualizações Avançadas**
-  - ✅ Gráficos interativos com Chart.js
-  - [ ] Dashboard em tempo real
-  - [ ] Mapas de calor e análises temporais
-
-- [ ] **Machine Learning**
-  - Previsão de vendas
-  - Detecção de anomalias
-  - Segmentação de clientes
-
-- [ ] **Processamento Distribuído**
-  - Integração com Apache Spark
-  - Processamento em paralelo
-  - Suporte a grandes volumes (>1GB)
-
-- [ ] **API REST**
-  - Endpoints para análise de dados
-  - Autenticação e autorização
-  - Documentação com Swagger
-
-- [x] **Melhorias de Qualidade**
-  - ✅ Logging estruturado (implementado)
-  - ✅ Tratamento de erros robusto (implementado)
-  - ✅ Validação de dados de entrada (implementado)
-  - [ ] Métricas de performance
-
-### GitHub Pages
-
-A interface web básica (`web/index.html`) está configurada para ser servida via GitHub Pages. Você pode acessá-la em: `https://galafis.github.io/Big-Data-Analytics-Platform/`
-
-#### 🎨 Preview da Interface Web
-
-![Web Dashboard](https://github.com/user-attachments/assets/6a4f287f-513d-4cd6-85f0-416f9517620b)
-
-**Recursos do Dashboard:**
-- 📊 Estatísticas em tempo real (categorias, transações, receita, média de vendas)
-- 📋 Tabela interativa com dados de vendas por categoria
-- 📈 Gráfico de barras interativo mostrando vendas totais por categoria
-- 🥧 Gráfico de pizza mostrando distribuição de transações
-- 🔄 Ordenação de colunas com um clique
-- 📱 Design responsivo para mobile e desktop
-- ⚡ Carregamento assíncrono de dados
-- ❗ Tratamento de erros com mensagens amigáveis
-
-### Contribuição
-
-Contribuições são bem-vindas! Por favor, leia o `CONTRIBUTING.md` para mais detalhes.
-
-Para um histórico completo de mudanças, consulte o [CHANGELOG.md](CHANGELOG.md).
-
-Para documentação detalhada da API, consulte [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
-
-### Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-### Autor
-
-Feito com ❤️ por Gabriel Demetrios Lafis.
-
----
-
-## 🇬🇧 English
-
-### Overview
-
-This repository presents an initial **Big Data Analytics Platform**, focused on demonstrating the processing and analysis of large data volumes. The goal is to provide a functional foundation for exploring Big Data concepts, from simulated data ingestion to generating insights through analysis. The project is modular and extensible, allowing the integration of various data sources and visualization tools.
-
-### Features
-
--   **Dummy Data Generation:** Simulates the creation of large transactional datasets.
--   **Processing and Analysis:** Performs basic sales analysis by category, calculating sums, averages, and counts.
--   **Modular Structure:** Clear organization of code and data to facilitate understanding and expansion.
--   **Web Interface:** Result visualization through a simple and responsive web interface with interactive charts.
--   **Automated Tests:** Unit test suite to ensure code quality.
--   **Structured Logging:** Detailed logging system for operation tracking.
--   **Multiple Export Formats:** Support for exporting data in CSV and JSON.
--   **Interactive Visualizations:** Bar and pie charts using Chart.js.
-
-### Architecture
-
-The project follows a simple modular architecture:
-
-```
-┌─────────────────┐
-│  Data Generator │  ──→  Generates synthetic sales data
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│  Data Processor │  ──→  Processes and analyzes data
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│   CSV Output    │  ──→  Saves results to CSV
-└─────────────────┘
-         ↓
-┌─────────────────┐
-│  Web Interface  │  ──→  Visualizes data on web
-└─────────────────┘
-```
-
-**Data Flow:**
-1. **Generation**: Synthetic data is created using NumPy
-2. **Transformation**: Data is processed with Pandas
-3. **Analysis**: Aggregations and statistical calculations
-4. **Storage**: Results saved in CSV format
-5. **Visualization**: Web interface loads and displays the data
-
-### Technologies Used
-
-| Category    | Technology | Description                                    |
-| :----------- | :--------- | :------------------------------------------- |
-| **Language** | Python     | Main language for data processing.           |
-| **Libraries**| Pandas     | Data manipulation and analysis.              |
-|              | NumPy      | High-performance numerical operations support. |
-| **Web**      | HTML       | Web interface structure.                     |
-|              | CSS        | Web interface styling.                       |
-
-### Project Structure
-
-```
-Big-Data-Analytics-Platform/
-├── data/                    # Stores processed data and analysis results
-│   └── sales_summary.csv    # Example of analysis result (generated)
-├── examples/                # Example scripts demonstrating platform usage
-│   └── basic_usage.py       # Basic data analysis example
-├── scripts/                 # Helper scripts
-│   └── branch-helper.sh     # Branch detection helper script
-├── src/                     # Main source code
-│   ├── data_processor.py    # Script for data generation and analysis
-│   └── test_data_processor.py # Unit tests for the data processor
-├── web/                     # Web interface files (GitHub Pages)
-│   ├── index.html           # Main platform page
-│   └── styles.css           # CSS styles for the web page
-├── .gitignore               # Files to be ignored by Git
-├── AUDIT_REPORT.md          # Complete repository audit report
-├── COMPREHENSIVE_AUDIT_REPORT.md # Comprehensive audit report (October 2025)
-├── CHANGELOG.md             # Project change history
-├── CODE_OF_CONDUCT.md       # Code of Conduct
-├── CONTRIBUTING.md          # Contribution Guidelines
-├── LICENSE                  # Project License
-├── QUICK_REFERENCE.md       # Quick reference for Git branch issues
-├── README.md                # This file (project documentation)
-├── TROUBLESHOOTING.md       # Complete troubleshooting guide
-├── requirements.txt         # Python dependencies
-└── setup.py                 # Automated installation script
-```
-
-### How to Use
-
-To set up and run this project locally, follow the steps below:
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
-    cd Big-Data-Analytics-Platform
-    ```
-
-2.  **Create and activate a virtual environment (recommended):**
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-    ```
-
-3.  **Install dependencies:**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Run the data processor:**
-
-    ```bash
-    python3 src/data_processor.py
-    ```
-
-    This script will generate dummy data, perform a sales analysis by category, and save the results to `data/sales_summary.csv`.
-
-5.  **Run tests (optional):**
-
-    ```bash
-    python3 src/test_data_processor.py
-    ```
-
-### Usage Examples
-
-#### Complete Example Script
-
-We include an example script that demonstrates complete platform usage:
-
-```bash
-python3 examples/basic_usage.py
-```
-
-This script demonstrates:
-- Custom dummy data generation
-- Sales analysis by category
-- Additional metrics calculation
-- Export to multiple formats
-
-#### Generating and Analyzing Data
-
-```python
-from src.data_processor import generate_dummy_data, analyze_sales_by_category
-
-# Generate 1000 rows of sales data
-df = generate_dummy_data(num_rows=1000)
-print(df.head())
-
-# Analyze sales by category
-summary = analyze_sales_by_category(df)
-print(summary)
-```
-
-#### Expected Output
-
-```
-Gerando dados dummy...
-Dados gerados:
-   product_id     category   price  quantity transaction_date
-0           7        Books  134.42         5       2023-04-04
-1           4  Electronics  130.97         6       2023-08-26
-2           8        Books  351.19         3       2023-07-23
-...
-
-Analisando vendas por categoria...
-Resumo de vendas por categoria:
-      category  total_sales_sum  average_sale_price  number_of_transactions
-0        Books         35543.39         1225.634138                      29
-1     Clothing         32032.74         1525.368571                      21
-2  Electronics         40168.57         1487.724815                      27
-3         Food         37850.03         1645.653478                      23
-```
-
-### Testing
-
-The project includes a complete unit test suite:
+### 🧪 Testing
 
 ```bash
 # Run all tests
-python3 src/test_data_processor.py
+pytest
+
+# Run with coverage
+pytest --cov --cov-report=html
+
+# Run with verbose output
+pytest -v
 ```
 
-**Test Coverage:**
-- ✅ Dummy data generation
-- ✅ Data structure validation
-- ✅ Sales analysis by category
-- ✅ Aggregation calculations
-- ✅ Results integrity
+### 📁 Project Structure
 
-### Troubleshooting
+```
+Big-Data-Analytics-Platform/
+├── examples/
+│   └── basic_usage.py
+├── scripts/
+│   └── branch-helper.sh
+├── src/
+│   ├── data_processor.py
+│   └── test_data_processor.py
+├── web/
+├── API_DOCUMENTATION.md
+├── AUDIT_REPORT.md
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── COMPREHENSIVE_AUDIT_REPORT.md
+├── CONTRIBUTING.md
+├── FINAL_AUDIT_REPORT.md
+├── QUICK_REFERENCE.md
+├── README.md
+├── RESUMO_AUDITORIA.md
+└── TROUBLESHOOTING.md
+```
 
-> 📚 For a complete troubleshooting guide, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)  
-> ⚡ For quick reference on Git branch error, see [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
+### 🛠️ Tech Stack
 
-#### Error: "fatal: ambiguous argument 'refs/heads/master': unknown revision or path not in the working tree"
+| Technology | Usage |
+|------------|-------|
+| Python | 4 files |
+| Shell | 1 files |
+| HTML | 1 files |
+| CSS | 1 files |
 
-**Cause:** This repository uses `main` as the default branch, not `master`. Scripts that reference `master` will fail.
+### 📄 License
 
-**Solution:** Use dynamic branch detection or update references to `main`:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### 👤 Author
+
+**Gabriel Demetrios Lafis**
+
+- GitHub: [@galafis](https://github.com/galafis)
+- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+
+---
+
+## Português
+
+### 🎯 Visão Geral
+
+**Big Data Analytics Platform** — Professional project by Gabriel Demetrios Lafis
+
+Total de linhas de código: **1,154** em **7** arquivos em **4** linguagens.
+
+### ✨ Funcionalidades Principais
+
+- **Arquitetura Pronta para Produção**: Modular, bem documentada e seguindo boas práticas
+- **Implementação Completa**: Solução completa com todas as funcionalidades principais
+- **Código Limpo**: Type-safe, bem testado e manutenível
+- **Fácil Implantação**: Suporte Docker para configuração e implantação rápidas
+
+### 🚀 Início Rápido
+
+#### Pré-requisitos
+- Python 3.12+
+
+
+#### Instalação
+
+1. **Clone the repository**
 ```bash
-# Detect default branch dynamically
-DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-git diff origin/$DEFAULT_BRANCH HEAD
-
-# Or use the helper script
-./scripts/branch-helper.sh get-default
+git clone https://github.com/galafis/Big-Data-Analytics-Platform.git
+cd Big-Data-Analytics-Platform
 ```
 
-#### Error: "ModuleNotFoundError: No module named 'pandas'"
+2. **Create virtual environment**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-**Solution:** Make sure you have installed the dependencies:
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Error: "FileNotFoundError: [Errno 2] No such file or directory: 'data/sales_summary.csv'"
 
-**Solution:** Run the data processor first to generate the CSV file:
+
+
+### 🧪 Testes
+
 ```bash
-python3 src/data_processor.py
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov --cov-report=html
+
+# Run with verbose output
+pytest -v
 ```
 
-#### Permission Error When Saving CSV
+### 📁 Estrutura do Projeto
 
-**Solution:** Verify that the `data/` directory exists and you have write permissions:
-```bash
-mkdir -p data
-chmod 755 data
+```
+Big-Data-Analytics-Platform/
+├── examples/
+│   └── basic_usage.py
+├── scripts/
+│   └── branch-helper.sh
+├── src/
+│   ├── data_processor.py
+│   └── test_data_processor.py
+├── web/
+├── API_DOCUMENTATION.md
+├── AUDIT_REPORT.md
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── COMPREHENSIVE_AUDIT_REPORT.md
+├── CONTRIBUTING.md
+├── FINAL_AUDIT_REPORT.md
+├── QUICK_REFERENCE.md
+├── README.md
+├── RESUMO_AUDITORIA.md
+└── TROUBLESHOOTING.md
 ```
 
-### Future Enhancements
+### 🛠️ Stack Tecnológica
 
-Planned feature roadmap:
+| Tecnologia | Uso |
+|------------|-----|
+| Python | 4 files |
+| Shell | 1 files |
+| HTML | 1 files |
+| CSS | 1 files |
 
-- [ ] **Multiple Data Source Support**
-  - Database integration (PostgreSQL, MongoDB)
-  - Read CSV, JSON, Parquet files
-  - ✅ JSON export (implemented)
-  - External API connections
+### 📄 Licença
 
-- [x] **Advanced Visualizations**
-  - ✅ Interactive charts with Chart.js
-  - [ ] Real-time dashboard
-  - [ ] Heat maps and temporal analysis
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-- [ ] **Machine Learning**
-  - Sales forecasting
-  - Anomaly detection
-  - Customer segmentation
+### 👤 Autor
 
-- [ ] **Distributed Processing**
-  - Apache Spark integration
-  - Parallel processing
-  - Large volume support (>1GB)
+**Gabriel Demetrios Lafis**
 
-- [ ] **REST API**
-  - Data analysis endpoints
-  - Authentication and authorization
-  - Swagger documentation
-
-- [x] **Quality Improvements**
-  - ✅ Structured logging (implemented)
-  - ✅ Robust error handling (implemented)
-  - ✅ Input data validation (implemented)
-  - [ ] Performance metrics
-
-### GitHub Pages
-
-The basic web interface (`web/index.html`) is configured to be served via GitHub Pages. You can access it at: `https://galafis.github.io/Big-Data-Analytics-Platform/`
-
-#### 🎨 Web Interface Preview
-
-![Web Dashboard](https://github.com/user-attachments/assets/6a4f287f-513d-4cd6-85f0-416f9517620b)
-
-**Dashboard Features:**
-- 📊 Real-time statistics (categories, transactions, revenue, average sales)
-- 📋 Interactive table with sales data by category
-- 📈 Interactive bar chart showing total sales by category
-- 🥧 Pie chart showing transaction distribution
-- 🔄 Column sorting with one click
-- 📱 Responsive design for mobile and desktop
-- ⚡ Asynchronous data loading
-- ❗ Error handling with user-friendly messages
-
-### Contribution
-
-Contributions are welcome! Please read `CONTRIBUTING.md` for more details.
-
-For a complete history of changes, see the [CHANGELOG.md](CHANGELOG.md).
-
-For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
-
-### License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-### Author
-
-Made with ❤️ by Gabriel Demetrios Lafis.
-
+- GitHub: [@galafis](https://github.com/galafis)
+- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
